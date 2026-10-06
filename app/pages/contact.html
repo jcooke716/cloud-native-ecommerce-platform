@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="asset-base" content=".." />
+
+  <title>Contact - E-Com Shop</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/contact.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+        <div class="logo">
+        <a href="../index.html"><strong>E-Com Shop</strong></a>
+        </div>
+
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        ☰ Menu
+      </button>
+
+      <nav id="site-nav">
+        <a href="../index.html">Home</a>
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
+        <a href="electronic.html">Electronic</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">🛍️ Cart (<span id="cart-count">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contact-page">
+    <h2 class="animate__animated animate__fadeInDown">📞 Contact Us</h2>
+    <p class="muted" style="max-width: 760px; margin: 0 auto 18px; text-align:center;">
+      Questions, feedback, or partnership requests? Send a message and we’ll respond fast.
+    </p>
+
+    <div class="contact-container">
+      <section class="contact-form">
+        <h3>Send a message</h3>
+        <form id="contact-form">
+          <label>
+            Name
+            <input name="name" required placeholder="Your name" />
+          </label>
+
+          <label>
+            Email
+            <input name="email" type="email" required placeholder="you@example.com" />
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" rows="6" required placeholder="How can we help?"></textarea>
+          </label>
+
+          <button class="btn" type="submit">Send Message</button>
+          <p id="contact-status" class="muted" style="margin:8px 0 0;"></p>
+        </form>
+      </section>
+
+      <section class="contact-info">
+        <h3>Store locations</h3>
+
+        <div class="location">
+          <strong>Downtown Showroom</strong>
+          <div class="muted">123 Market St, Example City</div>
+          <div class="muted">Mon–Fri: 9AM–5PM</div>
+        </div>
+
+        <div class="location">
+          <strong>Northside Pickup</strong>
+          <div class="muted">456 Lakeside Ave, Example City</div>
+          <div class="muted">Mon–Sat: 10AM–6PM</div>
+        </div>
+
+        <hr />
+
+        <p>
+          Email: <a href="mailto:support@ecomshop.com"><strong>support@ecomshop.com</strong></a><br />
+          Phone: <strong>(555) 123-4567</strong>
+        </p>
+
+        <div class="map">
+          <iframe
+            title="Map"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-80.02%2C33.92%2C-80.00%2C33.94&layer=mapnik"
+          ></iframe>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>MIT Licensed. © Thomas Davis, 2026.</p>
+  </footer>
+
+  <script src="../js/animations.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    // Demo-only submit handler (no backend)
+    document.getElementById('contact-form')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const status = document.getElementById('contact-status');
+      if (status) status.textContent = '✅ Message sent (demo). Hook this to your backend/email service later.';
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>

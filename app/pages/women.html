@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="asset-base" content=".." />
+
+  <title>Women - E-Com Shop</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+        <div class="logo">
+        <a href="../index.html"><strong>E-Com Shop</strong></a>
+        </div>
+
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        ☰ Menu
+      </button>
+
+      <nav id="site-nav">
+        <a href="../index.html">Home</a>
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
+        <a href="electronic.html">Electronic</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">🛍️ Cart (<span id="cart-count">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main data-category="women">
+    <h2 class="animate__animated animate__fadeInDown" style="text-align:center;">Women’s Collection</h2>
+    <p class="muted" style="text-align:center; max-width: 760px; margin: 0 auto 18px;">
+      Dresses, bags, and modern casual picks that look great on any screen size.
+    </p>
+
+    <div id="product-list" class="products"></div>
+  </main>
+
+  <footer>
+    <p>MIT Licensed. © Thomas Davis, 2026.</p>
+  </footer>
+
+  <script src="../js/animations.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

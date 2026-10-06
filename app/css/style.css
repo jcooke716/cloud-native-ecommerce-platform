@@ -1,0 +1,543 @@
+/* ===============================
+   E-Com Shop - style.css (2026)
+   MIT Licensed. © Thomas Davis
+================================ */
+
+:root{
+  --bg: #f7f7f8;
+  --surface: #ffffff;
+  --text: #141414;
+  --muted: #5b5b5b;
+  --border: rgba(0,0,0,.10);
+  --shadow: 0 10px 30px rgba(0,0,0,.10);
+
+  --brand: #ff8a00;
+  --brand2: #ffb300;
+
+  --radius: 16px;
+  --radius-sm: 12px;
+
+  --max: 1100px;
+}
+
+*{ box-sizing: border-box; }
+html, body { height: 100%; }
+
+body{
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+a{ color: inherit; text-decoration: none; }
+img{ display:block; max-width: 100%; }
+
+.muted{ color: var(--muted); }
+
+/* ===============================
+   Header / Nav
+================================ */
+header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: .4px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.logo:hover{
+  opacity: .85;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+nav a{
+  position: relative;
+  font-weight: 700;
+  color: #2a2a2a;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+
+nav a:hover{
+  background: rgba(0,0,0,.05);
+}
+
+#cart-count{
+  font-weight: 900;
+}
+
+#cart-count.pulse{
+  animation: pulse 250ms ease;
+}
+
+@keyframes pulse{
+  from { transform: scale(1); }
+  to { transform: scale(1.2); }
+}
+
+.nav-toggle{
+  display: none;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+/* Mobile nav */
+@media (max-width: 860px){
+  .nav-toggle{ display: inline-flex; align-items:center; gap:8px; }
+  nav{
+    position: fixed;
+    inset: 64px 12px auto 12px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 10px;
+    box-shadow: var(--shadow);
+  }
+  nav.open{ display:flex; }
+  nav a{ padding: 12px 12px; }
+}
+
+/* ===============================
+   Buttons
+================================ */
+.btn{
+  appearance: none;
+  border: 1px solid rgba(0,0,0,.12);
+  background: #1f1f1f;
+  color: #fff;
+  padding: 12px 16px;
+  font-size: 15px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 800;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  box-shadow: 0 10px 22px rgba(0,0,0,.12);
+}
+
+.btn:hover{
+  background: #4d4d4d;
+  border-color: rgba(255, 217, 0, 0.6);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.16);
+}
+
+.btn:active{
+  transform: translateY(0);
+  box-shadow: 0 8px 16px rgba(0,0,0,.14);
+}
+
+.btn:disabled{
+  opacity: .6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-secondary{
+  background: var(--surface);
+  color: var(--text);
+}
+
+.btn-secondary:hover{
+  background: rgba(0,0,0,.05);
+}
+
+/* ===============================
+   Hero Carousel
+================================ */
+.hero-carousel{
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.carousel-slide{
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity .55s ease;
+  display: grid;
+  place-items: center;
+}
+
+.carousel-slide.active{
+  opacity: 1;
+}
+
+.carousel-content{
+  width: min(680px, calc(100% - 24px));
+  background: rgba(0,0,0,.55);
+  border: 1px solid rgba(255,255,255,.18);
+  color: #fff;
+  padding: 26px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+
+.carousel-content h1{
+  margin: 0 0 12px;
+  font-size: clamp(26px, 3vw, 40px);
+  letter-spacing: .2px;
+}
+
+/* ===============================
+   Mini Item Carousel (clean)
+================================ */
+:root{
+  --mini-card: 250px;
+  --mini-gap: 14px;
+  --mini-visible: 4;
+}
+
+/* This keeps the section aligned with the rest of the page */
+.mini-carousel-section{
+  margin: 18px auto 26px;
+  max-width: var(--max);
+  padding: 0 16px;
+}
+
+/* This centers the "Featured Picks" row to the SAME width as the carousel */
+.mini-carousel-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  width: calc((var(--mini-card) * var(--mini-visible)) + (var(--mini-gap) * (var(--mini-visible) - 1)));
+  max-width: 100%;
+  margin: 0 auto 12px;
+}
+
+.mini-carousel-title{
+  margin: 0;
+  font-size: 20px;
+}
+
+.mini-carousel-controls{
+  display: flex;
+  gap: 8px;
+}
+
+/* Buttons stay “attached” to the carousel width */
+.mini-btn{
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: #fff;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(0,0,0,.08);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+.mini-btn:hover{
+  background: rgba(0,0,0,.04);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.12);
+}
+
+/* The carousel viewport: shows 4 cards, but can scroll for 7+ */
+.mini-carousel{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--mini-card);
+  gap: var(--mini-gap);
+
+  width: calc((var(--mini-card) * var(--mini-visible)) + (var(--mini-gap) * (var(--mini-visible) - 1)));
+  max-width: 100%;
+  margin: 0 auto;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  padding: 10px 4px 14px;
+  border-radius: 18px;
+
+  /* Hide scrollbar (optional but cleaner) */
+  scrollbar-width: none;              /* Firefox */
+}
+.mini-carousel::-webkit-scrollbar{    /* Chrome/Safari */
+  display: none;
+}
+
+/* Card styles */
+.mini-card{
+  scroll-snap-align: start;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 14px 40px rgba(0,0,0,.08);
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.mini-card img{
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #f2f2f2;
+}
+
+.mini-body{
+  padding: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.mini-name{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.25;
+  font-weight: 900;
+}
+
+.mini-price{
+  margin: 0;
+  font-weight: 900;
+}
+
+.mini-actions{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.mini-actions .btn{
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+/* Responsive behavior */
+@media (max-width: 1100px){
+  :root{ --mini-visible: 3; }
+}
+
+@media (max-width: 860px){
+  :root{ --mini-visible: 2; }
+}
+
+@media (max-width: 720px){
+  .mini-carousel-controls{ display:none; }
+  :root{ --mini-visible: 1; }
+  :root{ --mini-card: 240px; }
+}
+
+
+/* ===============================
+   Sections / Layout
+================================ */
+main{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 26px 16px 60px;
+}
+
+.hot-deals{
+  background: transparent;
+  padding: 0;
+}
+
+.hot-deals h2{
+  margin: 14px 0 18px;
+  font-size: 24px;
+}
+
+/* ===============================
+   Product grid (fix misalignment)
+================================ */
+.products{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 40px rgba(0,0,0,.08);
+}
+
+.product{
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.product-media{
+  background: #f2f2f2;
+}
+
+.product img{
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.product-body{
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.product-title{
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.product-price{
+  margin: 0;
+  font-weight: 900;
+  color: #111;
+}
+
+.product:hover{
+  transform: translateY(-2px);
+  transition: transform .15s ease;
+}
+
+/* ===============================
+   Toast Notifications
+================================ */
+.toast-wrap{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: grid;
+  gap: 10px;
+  z-index: 2000;
+  pointer-events: none;
+}
+
+.toast{
+  pointer-events: auto;
+  background: rgba(0,0,0,.88);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+  padding: 12px 14px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.22);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 240px;
+  max-width: min(420px, calc(100vw - 32px));
+  transform: translateY(12px);
+  opacity: 0;
+  animation: toastIn .22s ease forwards;
+}
+
+.toast .toast-icon{
+  font-size: 18px;
+  line-height: 1;
+}
+
+.toast .toast-text{
+  display: grid;
+  gap: 2px;
+  font-weight: 800;
+}
+
+.toast .toast-sub{
+  font-weight: 600;
+  opacity: .85;
+  font-size: 13px;
+}
+
+.toast .toast-actions{
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.toast .toast-link{
+  pointer-events: auto;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.14);
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.toast .toast-link:hover{
+  background: rgba(255,255,255,.18);
+}
+
+.toast.out{
+  animation: toastOut .22s ease forwards;
+}
+
+@keyframes toastIn{
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes toastOut{
+  to { transform: translateY(10px); opacity: 0; }
+}
+
+@media (max-width: 520px){
+  .toast-wrap{ left: 12px; right: 12px; bottom: 12px; }
+  .toast{ min-width: unset; width: 100%; }
+}
+
+/* ===============================
+   Footer
+================================ */
+footer{
+  margin-top: 30px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  text-align: center;
+  padding: 26px 12px;
+}

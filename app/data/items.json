@@ -1,0 +1,50 @@
+{
+  
+ "HELP": {
+    "what_is_this": "This file controls every product on the website. If you add/edit items here, the site updates automatically.",
+    "how_to_feature_items": "To show an item in the small 'Featured Picks' carousel, set 'featured' to true. To hide it from the carousel, set 'featured' to false.",
+    "how_to_add_a_new_item": [
+      "Copy one of the items below (everything inside { } ), paste it at the bottom of the list BEFORE the last ]",
+      "Change the id to a new number that is NOT already used",
+      "Change the name, price, image, category, and featured fields",
+      "Make sure every item has a comma after it EXCEPT the very last one"
+    ],
+    "field_explanations": {
+      "id": "A unique number for the product. Every product must have a different id.",
+      "name": "The product name shown on the website.",
+      "price": "The price as a number. Example: 19.99 (do not use a $ sign).",
+      "image": "The image file path inside the /images folder. Example: men/mens_jacket.jpg",
+      "category": "Where it shows up: men, women, or electronics.",
+      "featured": "true = shows in Featured Picks carousel, false = does not"
+    },
+    "common_mistakes": [
+      "Do not reuse an id",
+      "Do not delete commas between items",
+      "Do not put a comma after the LAST item",
+      "Make sure image paths match the file names exactly"
+    ]
+  },
+
+  "items": [
+    { "id": 1, "name": "Men's Black Jacket", "price": 59.99, "image": "men/mens_jacket.jpg", "category": "men", "featured": true },
+    { "id": 2, "name": "Men's Running Shoes", "price": 74.99, "image": "men/mens_shoes.jpg", "category": "men", "featured": false },
+    { "id": 3, "name": "Men's Graphic Tee", "price": 19.99, "image": "men/mens_tee.jpg", "category": "men", "featured": false },
+    { "id": 4, "name": "Men's Everyday Sneakers", "price": 54.0, "image": "men/mens_sneaker.jpg", "category": "men", "featured": false },
+
+    { "id": 5, "name": "Women's Summer Dress", "price": 39.99, "image": "women/womens_dress.jpg", "category": "women", "featured": false },
+    { "id": 6, "name": "Women's Handbag", "price": 49.99, "image": "women/womens_bag.jpg", "category": "women", "featured": true },
+    { "id": 7, "name": "Women's Casual Tote", "price": 34.0, "image": "women/womens_tote.jpg", "category": "women", "featured": false },
+    { "id": 8, "name": "Women's Street Sneakers", "price": 58.5, "image": "women/womens_sneaker.jpg", "category": "women", "featured": true },
+
+    { "id": 9, "name": "Smartphone Pro Max", "price": 899.0, "image": "electronics/phone.jpg", "category": "electronics", "featured": false },
+    { "id": 10, "name": "Bluetooth Speaker", "price": 29.99, "image": "electronics/speaker.jpg", "category": "electronics", "featured": true },
+    { "id": 11, "name": "Wireless Headphones", "price": 119.0, "image": "electronics/headphones.jpg", "category": "electronics", "featured": true },
+    { "id": 12, "name": "Fitness Smartwatch", "price": 89.0, "image": "electronics/smartwatch.jpg", "category": "electronics", "featured": false },
+
+    { "id": 13, "name": "Compact Power Bank", "price": 24.99, "image": "electronics/backpack.jpg", "category": "electronics", "featured": true },
+    { "id": 14, "name": "USB-C Fast Charger", "price": 18.99, "image": "electronics/charger.jpg", "category": "electronics", "featured": true },
+
+    { "id": 15, "name": "Men's Weekend Jacket", "price": 64.99, "image": "men/mens_jacket.jpg", "category": "men", "featured": true },
+    { "id": 16, "name": "Women's Light Dress", "price": 44.99, "image": "women/womens_dress.jpg", "category": "women", "featured": true }
+  ]
+}

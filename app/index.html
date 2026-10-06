@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="asset-base" content="." />
+
+  <title>E-Com Shop</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <!-- Logo section -->
+      <div class="logo">
+        <a href="index.html"><strong>E-Com Shop</strong></a>
+      </div>
+
+      <!-- Menu & Pages -->
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        ☰ Menu
+      </button>
+
+      <nav id="site-nav">
+        <a href="index.html">Home</a>
+        <a href="pages/men.html">Men</a>
+        <a href="pages/women.html">Women</a>
+        <a href="pages/electronic.html">Electronic</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/contact.html">Contact</a>
+        <a href="pages/cart.html">🛍️ Cart (<span id="cart-count">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Carousel -->
+  <section class="hero-carousel">
+    <div class="carousel-slide active" style="background-image: url('images/slide1.jpg');">
+      <div class="carousel-content animate__animated animate__fadeIn">
+        <h1>Fresh Picks, Fast Checkout</h1>
+        <p class="muted" style="color:#fff; opacity:.9;">
+          A clean eCommerce template with category pages, a working cart, and modern UI.
+        </p>
+        <button class="btn">Shop Men</button>
+      </div>
+    </div>
+
+    <div class="carousel-slide" style="background-image: url('images/slide2.jpg');">
+      <div class="carousel-content">
+        <h1>Modern Styles</h1>
+        <p class="muted" style="color:#fff; opacity:.9;">
+          Browse curated Women’s items with a smooth product grid.
+        </p>
+        <button class="btn">Shop Women</button>
+      </div>
+    </div>
+
+    <div class="carousel-slide" style="background-image: url('images/slide3.jpg');">
+      <div class="carousel-content">
+        <h1>Electronics That Pop</h1>
+        <p class="muted" style="color:#fff; opacity:.9;">
+          Phones, speakers, headphones, and more.
+        </p>
+        <button class="btn">Shop Electronics</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Picks Carousel -->
+  <section class="mini-carousel-section">
+  <div class="mini-carousel-head">
+    <h2 class="mini-carousel-title">Featured Picks</h2>
+    <div class="mini-carousel-controls">
+      <button class="mini-btn" type="button" id="mini-prev" aria-label="Previous">‹</button>
+      <button class="mini-btn" type="button" id="mini-next" aria-label="Next">›</button>
+    </div>
+  </div>
+
+  <div class="mini-carousel" id="mini-carousel" tabindex="0" aria-label="Featured items carousel"></div>
+</section>
+
+<!-- Main products -->
+  <main>
+    <section class="hot-deals">
+      <h2 class="animate__animated animate__fadeInUp">Featured Products</h2>
+      <div id="product-list" class="products"></div>
+    </section>
+  </main>
+
+<!-- Footer section change to what ever you want -->
+  <footer>
+    <p>MIT Licensed. © Thomas Davis, 2026. All filler content is template/demo only.</p>
+  </footer>
+
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

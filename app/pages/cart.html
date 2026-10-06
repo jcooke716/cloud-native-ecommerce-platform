@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="asset-base" content=".." />
+
+  <title>Cart - E-Com Shop</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/cart.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+        <div class="logo">
+        <a href="../index.html"><strong>E-Com Shop</strong></a>
+        </div>
+
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        ☰ Menu
+      </button>
+
+      <nav id="site-nav">
+        <a href="../index.html">Home</a>
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
+        <a href="electronic.html">Electronic</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">🛍️ Cart (<span id="cart-count">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="cart-page">
+    <h1 class="animate__animated animate__fadeInDown">🛍️ Your Cart</h1>
+
+    <div class="cart-layout">
+      <section class="cart-panel card">
+        <div id="cart-items" class="cart-items"></div>
+      </section>
+
+      <aside class="summary card">
+        <h3>Order Summary</h3>
+        <p class="muted">Demo checkout for template testing.</p>
+        <div class="summary-row">
+          <strong id="cart-total">Total: $0.00</strong>
+        </div>
+        <button id="checkout-button" class="btn">Checkout</button>
+        <a class="btn btn-secondary" href="../index.html" style="text-align:center;">Continue Shopping</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>MIT Licensed. © Thomas Davis, 2026.</p>
+  </footer>
+
+  <script src="../js/animations.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/cart.js"></script>
+</body>
+</html>

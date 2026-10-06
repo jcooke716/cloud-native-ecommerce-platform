@@ -1,0 +1,62 @@
+.contact-page h2{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.contact-form, .contact-info{
+  background: #fff;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,.10);
+  box-shadow: 0 14px 40px rgba(0,0,0,.08);
+}
+
+.contact-form h3, .contact-info h3{
+  margin-top: 0;
+}
+
+.contact-form label{
+  display: grid;
+  gap: 6px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.14);
+  font: inherit;
+}
+
+.location{
+  padding: 10px 0;
+}
+
+.map{
+  margin-top: 12px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.10);
+}
+
+.map iframe{
+  width: 100%;
+  height: 240px;
+  border: 0;
+}
+
+@media (max-width: 980px){
+  .contact-container{
+    grid-template-columns: 1fr;
+  }
+}
