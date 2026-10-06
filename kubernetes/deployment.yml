@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-deployment
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: ecommerce
+
+
+  template:
+    metadata:
+      labels: 
+        app: ecommerce
+
+
+    spec:
+      containers:
+      - name: ecommerce-container
+        image: jordanc716/cloud-native-ecommerce:v1
+        ports:
+          - containerPort: 80
