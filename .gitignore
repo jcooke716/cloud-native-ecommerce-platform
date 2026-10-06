@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Environment / secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
