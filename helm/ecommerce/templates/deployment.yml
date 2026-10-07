@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-ecommerce
+
+spec:
+  replicas: {{ .Values.replicaCount }}
+
+  selector:
+    matchLabels:
+      app: ecommerce
+      release: {{ .Release.Name }}
+
+  template:
+    metadata:
+      labels:
+        app: ecommerce
+        release: {{ .Release.Name }}
+
+    spec:
+      containers:
+      - name: ecommerce-container
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        ports:
+          - containerPort: 80

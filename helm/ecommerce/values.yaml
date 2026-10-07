@@ -1,0 +1,10 @@
+replicaCount: 3
+
+image:
+  repository: jordanc716/cloud-native-ecommerce
+  tag: v1
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 80
